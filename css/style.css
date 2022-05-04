@@ -4,5 +4,91 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif; }
 
-li {
-  list-style-type: none; }
+body {
+  background: #88ABFF; }
+  body .wrapper {
+    margin: 50px;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fill, 265px);
+    justify-content: center; }
+    body .wrapper li {
+      height: 250px;
+      background: #FFF;
+      list-style: none;
+      border-radius: 5px;
+      padding: 15px 20px 20px; }
+    body .wrapper .add-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer; }
+      body .wrapper .add-box .icon {
+        height: 78px;
+        width: 78px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #88ABFF;
+        font-size: 40px;
+        border-radius: 50%;
+        border: 2px dashed #88ABFF; }
+      body .wrapper .add-box p {
+        color: #88ABFF;
+        font-weight: 500;
+        margin-top: 20px; }
+    body .wrapper .note {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      body .wrapper .note p {
+        font-size: 22px;
+        font-weight: 500; }
+      body .wrapper .note span {
+        display: block;
+        margin-top: 5px;
+        color: #575757;
+        font-size: 16px; }
+      body .wrapper .note .bottom-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 10px;
+        border-top: 1px solid #CCC; }
+        body .wrapper .note .bottom-content span {
+          color: #6D6D6D;
+          font-size: 14px; }
+        body .wrapper .note .bottom-content .settings {
+          position: relative; }
+          body .wrapper .note .bottom-content .settings i {
+            color: #6D6D6D;
+            font-size: 15px;
+            cursor: pointer; }
+          body .wrapper .note .bottom-content .settings .menu {
+            position: absolute;
+            bottom: 0;
+            right: -5px;
+            border-radius: 4px;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+            padding: 5px 0;
+            background-color: #FFF;
+            transform: scale(0);
+            transform-origin: bottom right;
+            transition: transform 0.2s ease; }
+            body .wrapper .note .bottom-content .settings .menu li {
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              height: 25px;
+              border-radius: 0;
+              padding: 17px 15px;
+              cursor: pointer;
+              font-size: 16px; }
+              body .wrapper .note .bottom-content .settings .menu li i {
+                padding-right: 8px; }
+            body .wrapper .note .bottom-content .settings .menu li:hover {
+              background-color: #F5F5F5; }
+        body .wrapper .note .bottom-content .settings:hover .menu {
+          transform: scale(1); }

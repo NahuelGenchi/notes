@@ -1,0 +1,108 @@
+body {
+    background: #88ABFF;
+    .wrapper {
+        margin: 50px;
+        display: grid;
+        gap: 15px;
+        grid-template-columns: repeat(auto-fill, 265px);
+        justify-content: center;
+        li {
+            height: 250px;
+            background: #FFF;
+            list-style: none;
+            border-radius: 5px;
+            padding: 15px 20px 20px;
+        }
+        .add-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            .icon {
+                height: 78px;
+                width: 78px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: #88ABFF;
+                font-size: 40px;
+                border-radius: 50%;
+                border: 2px dashed #88ABFF;
+            }
+            p {
+                color: #88ABFF;
+                font-weight: 500;
+                margin-top: 20px;
+            }
+        }
+        .note {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            p {
+                font-size: 22px;
+                font-weight: 500;
+            }
+            span {
+                display: block;
+                margin-top: 5px;
+                color: #575757;
+                font-size: 16px;
+            }
+            .bottom-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-top: 10px;
+                border-top: 1px solid #CCC;
+                span {
+                    color: #6D6D6D;
+                    font-size: 14px;
+                }
+                .settings {
+                    position: relative;
+                    i {
+                        color: #6D6D6D;
+                        font-size: 15px;
+                        cursor: pointer;
+                    }
+                    .menu {
+                        position: absolute;
+                        bottom: 0;
+                        right: -5px;
+                        border-radius: 4px;
+                        box-shadow: 0 0 6px rgba(0,0,0,0.15);
+                        padding: 5px 0;
+                        background-color: #FFF;
+                        transform: scale(0);
+                        transform-origin: bottom right;
+                        transition: transform 0.2s ease;
+                        li {
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            height: 25px;
+                            border-radius: 0;
+                            padding: 17px 15px;
+                            cursor: pointer;
+                            font-size: 16px;
+                            i {
+                                padding-right: 8px;
+                            }
+                        }
+                        li:hover {
+                            background-color: #F5F5F5;
+                        }
+                    }
+                }
+                .settings:hover {
+                    .menu {
+                        transform: scale(1);
+                    }   
+                }
+            }
+        }
+    }
+}
