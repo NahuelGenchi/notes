@@ -99,9 +99,7 @@ body {
     height: 100%;
     width: 100%;
     z-index: 2;
-    background: rgba(0, 0, 0, 0.4);
-    opacity: 0;
-    pointer-events: none; }
+    background: rgba(0, 0, 0, 0.4); }
     body .popup-box .popup {
       display: flex;
       align-items: center;
@@ -112,9 +110,7 @@ body {
       z-index: 3;
       max-width: 400px;
       width: 100%;
-      transform: translate(-50%, -50%);
-      opacity: 0;
-      pointer-events: none; }
+      transform: translate(-50%, -50%); }
       body .popup-box .popup .content {
         width: calc(100% - 15px);
         background: #FFF;
@@ -162,3 +158,10 @@ body {
             outline: none;
             color: #FFF;
             background: #6A93F8; }
+  body .popup-box, body .popup-box .popup {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease; }
+  body .popup-box.show, body .popup-box.show .popup {
+    opacity: 1;
+    pointer-events: auto; }

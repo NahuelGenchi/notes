@@ -113,8 +113,6 @@ body {
         width: 100%;
         z-index: 2;
         background: rgba(0,0,0,0.4);
-        opacity: 0;
-        pointer-events: none;
         .popup {
             display: flex;
             align-items: center;
@@ -126,8 +124,6 @@ body {
             max-width: 400px;
             width: 100%;
             transform: translate(-50%, -50%);
-            opacity: 0;
-            pointer-events: none;
             .content {
                 width: calc(100% - 15px);
                 background: #FFF;
@@ -186,5 +182,14 @@ body {
                 }
             }
         }
+    }
+    .popup-box, .popup-box .popup {
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.25s ease;
+    }
+    .popup-box.show, .popup-box.show .popup {
+        opacity: 1;
+        pointer-events: auto;
     }
 }
