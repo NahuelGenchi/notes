@@ -90,7 +90,7 @@ body {
                 padding-right: 8px; }
             body .wrapper .note .bottom-content .settings .menu li:hover {
               background-color: #F5F5F5; }
-        body .wrapper .note .bottom-content .settings:hover .menu {
+        body .wrapper .note .bottom-content .settings.show .menu {
           transform: scale(1); }
   body .popup-box {
     position: fixed;

@@ -9,7 +9,7 @@ const months = ["January", "February", "March", "April", "May", "June", "July",
 "August", "September", "October", "November", "December"];
 // getting localStorage notes if exist and parsing them
 // to js object else passing an empty array to notes
-const notes = JSON.parse(localStorage.getItem("notes") || "[]")
+const notes = JSON.parse(localStorage.getItem("notes") || "[]");
 
 addBox.addEventListener("click", function(){
     popupBox.classList.add("show");
@@ -21,7 +21,7 @@ closeIcon.addEventListener("click", function(){
 });
 function showNotes() {
     document.querySelectorAll(".note").forEach(note => note.remove());
-    notes.forEach((note) => {
+    notes.forEach((note, index) => {
         let liTag = `<li class="note">
                         <div class="details">
                             <p>${note.title}</p>
@@ -30,10 +30,10 @@ function showNotes() {
                         <div class="bottom-content">
                             <span>${note.date}</span>
                             <div class="settings">
-                                <i class="uil uil-ellipsis-h"></i>
+                                <i onclick="showMenu(this)" class="uil uil-ellipsis-h"></i>
                                 <ul class="menu">
                                     <li><i class="uil uil-pen"></i>Edit</li>
-                                    <li><i class="uil uil-trash"></i>Delete</li>
+                                    <li onclick="deleteNote(${index})"><i class="uil uil-trash"></i>Delete</li>
                                 </ul>
                             </div>
                         </div>
@@ -42,6 +42,15 @@ function showNotes() {
     });
 };
 showNotes();
+function showMenu(elem) {
+    elem.parentElement.classList.add("show");
+    document.addEventListener("click", e => {
+        // removing show class from the settings menu on document click
+        if (e.target.tagName != "I" || e.target != elem) {
+            elem.parentElement.classList.remove("show");
+        };
+    });
+};
 addBtn.addEventListener("click", e => {
     e.preventDefault();
     let noteTitle = titleTag.value,
@@ -62,5 +71,5 @@ addBtn.addEventListener("click", e => {
         localStorage.setItem("notes", JSON.stringify(notes));
         closeIcon.click();
         showNotes();
-    }
+    };
 });
