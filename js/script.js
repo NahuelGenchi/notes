@@ -51,6 +51,11 @@ function showMenu(elem) {
         };
     });
 };
+function deleteNote(noteId) {
+    notes.splice(noteId, 1); // removing selected note from array/tasks
+    localStorage.setItem("notes", JSON.stringify(notes)); // saving updated notes to localStorage
+    showNotes();
+};
 addBtn.addEventListener("click", e => {
     e.preventDefault();
     let noteTitle = titleTag.value,
