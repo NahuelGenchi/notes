@@ -103,6 +103,10 @@ body {
                     }   
                 }
             }
+            .details {
+                max-height: 165px;
+                overflow-y: auto;
+            }
         }
     }
     .popup-box {

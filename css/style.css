@@ -92,6 +92,9 @@ body {
               background-color: #F5F5F5; }
         body .wrapper .note .bottom-content .settings.show .menu {
           transform: scale(1); }
+      body .wrapper .note .details {
+        max-height: 165px;
+        overflow-y: auto; }
   body .popup-box {
     position: fixed;
     top: 0;
